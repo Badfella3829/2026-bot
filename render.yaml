@@ -1,0 +1,27 @@
+
+services:
+  - type: web
+    name: telegram-movie-bot
+    plan: free
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: bot-db
+          property: connectionString
+      - key: BOT_TOKEN
+        sync: false
+      - key: TMDB_API_KEY
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: NODE_ENV
+        value: production
+
+databases:
+  - name: bot-db
+    databaseName: telegrambot
+    user: telegrambot
+    plan: free # Note: Render free tier PostgreSQL expires after 30 days.

@@ -1,0 +1,50 @@
+Starting Container
+npm warn config production Use `--omit=dev` instead.
+> telegram-movie-bot@1.0.0 start
+> NODE_ENV=production tsx bot/index.ts
+Health check server running on port 8080
+Bot username cached: @nnnnnnewtesting_bot
+Webhook deleted, starting polling mode in production...
+Commands set!
+Bot starting polling mode (production)...
+Bot @nnnnnnewtesting_bot started successfully in production polling mode!
+Stopping Container
+npm error path /app
+npm error command failed
+npm error signal SIGTERM
+npm error command sh -c NODE_ENV=production tsx bot/index.ts
+npm error A complete log of this run can be found in: /root/.npm/_logs/2026-01-29T18_01_36_279Z-debug-0.log
+Unknown error: AggregateError [ECONNREFUSED]: 
+    at /app/node_modules/pg-pool/index.js:45:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async <anonymous> (/app/node_modules/src/node-postgres/session.ts:104:19)
+    at async getBotStatus (/app/bot/index.ts:201:18)
+    Error: connect ECONNREFUSED ::1:5432
+    at async <anonymous> (/app/bot/index.ts:392:21)
+        at createConnectionError (node:net:1678:14)
+    at async /app/node_modules/grammy/out/composer.js:578:13
+      port: 5432
+        at afterConnectMultiple (node:net:1708:16) {
+    },
+    at async /app/node_modules/grammy/out/composer.js:62:13
+      errno: -111,
+    Error: connect ECONNREFUSED 127.0.0.1:5432
+    at async /app/node_modules/grammy/out/composer.js:62:13
+      code: 'ECONNREFUSED',
+    at async /app/node_modules/@grammyjs/conversations/out/plugin.js:223:13
+    at async /app/node_modules/grammy/out/composer.js:62:13 {
+      syscall: 'connect',
+      address: '::1',
+  code: 'ECONNREFUSED',
+  [errors]: [
+Error while handling update 818611756:
+        at createConnectionError (node:net:1678:14)
+        at afterConnectMultiple (node:net:1708:16) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 5432
+    }
+  ]
+}

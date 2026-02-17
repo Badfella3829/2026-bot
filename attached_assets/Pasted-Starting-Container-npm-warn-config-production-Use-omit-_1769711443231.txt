@@ -1,0 +1,105 @@
+Starting Container
+npm warn config production Use `--omit=dev` instead.
+> telegram-movie-bot@1.0.0 start
+> NODE_ENV=production tsx bot/index.ts
+Health check server running on port 8080
+Bot username cached: @nnnnnnewtesting_bot
+Webhook deleted, starting polling mode in production...
+Commands set!
+Bot starting polling mode (production)...
+Bot @nnnnnnewtesting_bot started successfully in production polling mode!
+GrammyError: Call to 'getUpdates' failed! (409: Conflict: terminated by other getUpdates request; make sure that only one bot instance is running)
+    at toGrammyError (/app/node_modules/grammy/out/core/error.js:47:12)
+    at ApiClient.callApi (/app/node_modules/grammy/out/core/client.js:97:48)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Bot.fetchUpdates (/app/node_modules/grammy/out/bot.js:423:27)
+    at async Bot.loop (/app/node_modules/grammy/out/bot.js:394:33)
+    at async Bot.start (/app/node_modules/grammy/out/bot.js:315:9) {
+  method: 'getUpdates',
+  payload: { offset: 1, limit: undefined, timeout: 30, allowed_updates: [] },
+  ok: false,
+  error_code: 409,
+  description: 'Conflict: terminated by other getUpdates request; make sure that only one bot instance is running',
+/app/node_modules/grammy/out/core/error.js:47
+  parameters: {}
+    return new GrammyError(`Call to '${method}' failed!`, err, method, payload);
+}
+           ^
+Node.js v22.22.0
+npm warn config production Use `--omit=dev` instead.
+> telegram-movie-bot@1.0.0 start
+> NODE_ENV=production tsx bot/index.ts
+Health check server running on port 8080
+Bot username cached: @nnnnnnewtesting_bot
+Webhook deleted, starting polling mode in production...
+Commands set!
+Bot starting polling mode (production)...
+Bot @nnnnnnewtesting_bot started successfully in production polling mode!
+        at createConnectionError (node:net:1678:14)
+        at afterConnectMultiple (node:net:1708:16) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+Error while handling update 818611777:
+Unknown error: AggregateError [ECONNREFUSED]: 
+      port: 5432
+    at /app/node_modules/pg-pool/index.js:45:11
+    },
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    Error: connect ECONNREFUSED 127.0.0.1:5432
+    at async <anonymous> (/app/node_modules/src/node-postgres/session.ts:104:19)
+    at async getBotStatus (/app/bot/index.ts:201:18)
+    at async <anonymous> (/app/bot/index.ts:392:21)
+    at async /app/node_modules/grammy/out/composer.js:578:13
+    at async /app/node_modules/grammy/out/composer.js:62:13
+    at async /app/node_modules/grammy/out/composer.js:62:13
+    at async /app/node_modules/@grammyjs/conversations/out/plugin.js:223:13
+    at async /app/node_modules/grammy/out/composer.js:62:13 {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:5432
+        at createConnectionError (node:net:1678:14)
+        at afterConnectMultiple (node:net:1708:16) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 5432
+    }
+  ]
+}
+    at async /app/node_modules/grammy/out/composer.js:62:13
+    },
+    at async /app/node_modules/grammy/out/composer.js:62:13
+    at async /app/node_modules/@grammyjs/conversations/out/plugin.js:223:13
+    Error: connect ECONNREFUSED 127.0.0.1:5432
+    at async /app/node_modules/grammy/out/composer.js:62:13 {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:5432
+        at createConnectionError (node:net:1678:14)
+Error while handling update 818611778:
+        at afterConnectMultiple (node:net:1708:16) {
+Unknown error: AggregateError [ECONNREFUSED]: 
+      errno: -111,
+      code: 'ECONNREFUSED',
+    at /app/node_modules/pg-pool/index.js:45:11
+      syscall: 'connect',
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      address: '::1',
+    at async <anonymous> (/app/node_modules/src/node-postgres/session.ts:104:19)
+      port: 5432
+    at async getBotStatus (/app/bot/index.ts:201:18)
+    at async <anonymous> (/app/bot/index.ts:392:21)
+    at async /app/node_modules/grammy/out/composer.js:578:13
+        at createConnectionError (node:net:1678:14)
+        at afterConnectMultiple (node:net:1708:16) {
+      errno: -111,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 5432
+    }
+  ]
+}
